@@ -15,7 +15,6 @@ const http = require('http');
 const fs = require('fs');
 const server = http.createServer((request, response) => {
 
-
     const url = request.url;
     let fileContent;
 
@@ -34,9 +33,7 @@ const server = http.createServer((request, response) => {
             'content-type': 'text/html'
         })
         fileContent = fs.readFileSync('./notFund.html', 'utf8');
-
     }
-
     response.end(fileContent)
 });
 server.listen(8080);
